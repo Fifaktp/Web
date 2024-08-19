@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+body {
+    background-color: #FFDEAD;
+    color: #000;
+    line-height: 1.6;
+}
+
+.header {
+    background: #000;
+    color: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0;
+    animation:slideLeft 1s ease forwards;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    opacity: 0;
+    animation:slideLeft 3s ease forwards;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.home {
+    padding: 100px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5deb3;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation:slideRight 1s ease forwards;
+    animation-delay:.7s ;
+    
+}
+
+.home-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation:slideLeft 1s ease forwards;
+    animation-delay:1s ;
+}
+
+.home-content p {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation:slideLeft 1s ease forwards;
+    animation-delay:1.7s ;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    opacity: 0;
+    animation:slideTop 1s ease forwards;
+    animation-delay:1.8s ;
+    
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.home-img {
+    position: relative;
+    max-width: 400px;
+    opacity: 0;
+    animation:zoomIn 1s ease forwards , floatImage  
+    4s ease-in-out infinite;
+    animation-delay:2.1s,3.1s ;
+}
+
+.glowing-circle {
+    position: relative;
+}
+
+.glowing-circle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #009B77;
+    animation: animate 2.5s linear infinite;
+    opacity: 0;
+}
+
+.glowing-circle span:nth-child(2) { 
+    animation-delay: 1s;
+}
+
+.glowing-circle .image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #009B77; /* สีเขียวเวอร์ริเดียน */
+    
+}
+
+.glowing-circle img {
+    display: block;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.about, .strengths-weaknesses {
+    padding: 50px 10%;
+    background: #f0e68c;
+}
+
+.about-content, .strengths-weaknesses .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2, .strengths-weaknesses h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.strengths-weaknesses .strengths, .strengths-weaknesses .weaknesses {
+    margin-bottom: 20px;
+}
+
+.strengths-weaknesses h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.strengths-weaknesses {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.strengths-weaknesses-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.strengths, .weaknesses {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.strengths {
+    background-color: #d4edda; /* Light green for strengths */
+}
+
+.weaknesses {
+    background-color: #f8d7da; /* Light red for weaknesses */
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    
+
+}
+@keyframes slideTop  {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+   
+}
+@keyframes slideRight  {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+}
+@keyframes slideLeft  {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn  {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes floatImage  {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+ }

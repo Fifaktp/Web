@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+body {
+    background-color: #FFDEAD;
+    color: #000;
+    line-height: 1.6;
+}
+
+.header {
+    background: #000;
+    color: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0;
+    animation:slideLeft 1s ease forwards;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    opacity: 0;
+    animation:slideLeft 3s ease forwards;
+}
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.contact-section {
+    padding: 120px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5deb3;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation:slideTop 2s ease forwards;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item i {
+    color: #000;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.contact-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-item a, .contact-item p {
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    
+
+}
+@keyframes slideLeft  {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideTop  {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+   
+}

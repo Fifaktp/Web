@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr', sans-serif;
+}
+
+body {
+    background-color: #FFDEAD;
+    color: #000;
+    line-height: 1.6;
+}
+
+.header {
+    background: #000;
+    color: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0;
+    animation:slideLeft 1s ease forwards;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    opacity: 0;
+    animation:slideLeft 3s ease forwards;
+}
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.experience {
+    padding: 120px 10%;
+    background-color:  #FFDEAD;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #444;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.experience-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation:slideTop 1s ease forwards;
+}
+.experience-item img {
+    width: 100%; /* Ensure the image fills the width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Match the border radius of the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow for a better visual appearance */
+    object-fit: cover; /* Ensures the image stays within the container without stretching */
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.duration, .role, .institution, .gpa {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.description {
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+.note {
+    color: #ff0000; /* Red color to highlight */
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 0;
+    animation:slideTop 1s ease forwards;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows, auto height based on content */
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+}
+
+.skill-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content vertically and horizontally */
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: slideTop 2s ease forwards;
+}
+
+/* Ensure the skill-item does not exceed a maximum width */
+.skill-item {
+    max-width: 100%; /* Make sure it fits within the grid cell */
+}
+
+/* Optional: Adjust font size or padding if needed */
+.skill-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+.grade-images img{
+    opacity: 0;
+    animation:slideTop 3s ease forwards;
+
+}
+
+@media screen and (max-width: 768px) {
+    .experience {
+        padding: 120px 5%;
+    }
+    
+    .menu li {
+        margin: 0 10px;
+    }
+
+    .experience-item {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .experience-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    
+
+}
+@keyframes slideLeft  {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideTop  {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+   
+}
